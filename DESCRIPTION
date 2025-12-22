@@ -27,3 +27,5 @@ Imports:
 Remotes: hypertidy/geographiclib, 
          hypertidy/sds, 
          hypertidy/vaster
+URL: https://github.com/hypertidy/starc
+BugReports: https://github.com/hypertidy/starc/issues

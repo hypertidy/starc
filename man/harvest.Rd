@@ -10,7 +10,7 @@ harvest(
   collection,
   t0,
   t1,
-  store = "store",
+  store = "~/starc-store",
   limit = 300,
   pad_km = 5
 )

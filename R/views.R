@@ -5,7 +5,7 @@
 # ==============================================================================
 
 #' Marker: max solarday per collection (deduped, derived, never stored)
-marker <- function(store = "store") {
+marker <- function(store = "~/starc-store") {
   a <- arrow::open_dataset(file.path(store, "acquisitions")) |>
     dplyr::select(acquisition_id, solarday) |>
     dplyr::collect() |>
@@ -28,7 +28,7 @@ marker <- function(store = "store") {
 #' Joins products -> queries via query_id to recover region_id. Product
 #' rows from harvests predating the query_id column drop out of the
 #' inner join (re-harvest to backfill).
-marker_region <- function(store = "store") {
+marker_region <- function(store = "~/starc-store") {
   q <- arrow::open_dataset(file.path(store, "queries")) |>
     dplyr::select(query_id, region_id) |>
     dplyr::collect()

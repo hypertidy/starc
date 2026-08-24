@@ -4,7 +4,7 @@
 \alias{marker}
 \title{Marker: max solarday per collection (deduped, derived, never stored)}
 \usage{
-marker(store = "store")
+marker(store = "~/starc-store")
 }
 \description{
 Marker: max solarday per collection (deduped, derived, never stored)

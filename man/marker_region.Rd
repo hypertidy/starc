@@ -4,7 +4,7 @@
 \alias{marker_region}
 \title{Region-scoped marker: what estinel's incremental cadence asks for}
 \usage{
-marker_region(store = "store")
+marker_region(store = "~/starc-store")
 }
 \description{
 Joins products -> queries via query_id to recover region_id. Product

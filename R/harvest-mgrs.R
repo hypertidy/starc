@@ -58,7 +58,7 @@ mgrs_month_url <- function(mgrs, month,
 harvest_mgrs <- function(mgrs, month,
                          collection = "sentinel-2-c1-l2a",
                          endpoint = "https://earth-search.aws.element84.com/v1/search",
-                         store = "store", limit = 300) {
+                         store = "~/starc-store", limit = 300) {
   w <- month_window(month)
   harvest_url(
     url_builder = function() mgrs_month_url(mgrs, month, collection,

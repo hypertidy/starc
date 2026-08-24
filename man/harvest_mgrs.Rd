@@ -9,7 +9,7 @@ harvest_mgrs(
   month,
   collection = "sentinel-2-c1-l2a",
   endpoint = "https://earth-search.aws.element84.com/v1/search",
-  store = "store",
+  store = "~/starc-store",
   limit = 300
 )
 }

@@ -22,6 +22,20 @@ fetch_all_pages <- function(url, max_pages = 100) {
   list(items = items, n_pages = n_pages)
 }
 
+#' Pad a lonlat extent outward by a minimum ground distance
+#'
+#' Region extents are member-centroid bboxes, so singleton and
+#' co-located regions degenerate to points; discovery queries need
+#' area. Pads by min_km on every side, longitude scaled by cos(lat)
+#' so the pad is honest at 77S. This is a discovery buffer, not the
+#' site window: scene footprints are ~100 km, so modest padding
+#' suffices to catch every scene touching the sites.
+pad_extent <- function(extent, min_km = 5) {
+  dlat <- min_km / 111.32
+  dlon <- min_km / (111.32 * cos(mean(extent[3:4]) * pi / 180))
+  c(extent[1] - dlon, extent[2] + dlon, extent[3] - dlat, extent[4] + dlat)
+}
+
 # ==============================================================================
 # HARVEST ONE (region, provider, collection, window)
 # ==============================================================================
@@ -33,7 +47,7 @@ fetch_all_pages <- function(url, max_pages = 100) {
 #' distinct from the absence of a row ("never asked").
 #' @keywords internal
 harvest_url <- function(url_builder, region_id, provider, collection,
-                        t0, t1, store = "store") {
+                        t0, t1, store = "~/starc-store") {
   mapper <- mappers[[collection]]
   if (is.null(mapper)) stop("no mapper registered for collection: ", collection)
 
@@ -119,7 +133,7 @@ harvest_url <- function(url_builder, region_id, provider, collection,
 #' @return the query log row, invisibly
 #' @export
 harvest <- function(region, provider, collection, t0, t1,
-                    store = "store", limit = 300, pad_km = 5) {
+                    store = "~/starc-store", limit = 300, pad_km = 5) {
   llex <- pad_extent(unlist(region[c("lonmin", "lonmax", "latmin", "latmax")]),
                      min_km = pad_km)
   harvest_url(

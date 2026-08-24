@@ -11,7 +11,7 @@ harvest_url(
   collection,
   t0,
   t1,
-  store = "store"
+  store = "~/starc-store"
 )
 }
 \description{

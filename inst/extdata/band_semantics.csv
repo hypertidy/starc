@@ -1,0 +1,24 @@
+collection,asset_key,common_name,gsd_m,role,notes
+sentinel-2-c1-l2a,coastal,coastal,60,band,B01
+sentinel-2-c1-l2a,blue,blue,10,band,B02
+sentinel-2-c1-l2a,green,green,10,band,B03
+sentinel-2-c1-l2a,red,red,10,band,B04
+sentinel-2-c1-l2a,rededge1,rededge1,20,band,B05
+sentinel-2-c1-l2a,rededge2,rededge2,20,band,B06
+sentinel-2-c1-l2a,rededge3,rededge3,20,band,B07
+sentinel-2-c1-l2a,nir,nir,10,band,B08
+sentinel-2-c1-l2a,nir08,nir08,20,band,B8A narrow NIR
+sentinel-2-c1-l2a,nir09,nir09,60,band,B09 water vapour band
+sentinel-2-c1-l2a,swir16,swir16,20,band,B11
+sentinel-2-c1-l2a,swir22,swir22,20,band,B12
+sentinel-2-c1-l2a,scl,scl,20,derived,scene classification; not interchangeable with fmask
+sentinel-2-c1-l2a,cloud,cloud_prob,20,derived,cloud probability; candidate clear-sky upgrade
+sentinel-2-c1-l2a,snow,snow_prob,20,derived,snow probability; polar cloud/snow disambiguation
+sentinel-2-c1-l2a,aot,aot,20,derived,aerosol optical thickness
+sentinel-2-c1-l2a,wvp,wvp,20,derived,water vapour
+sentinel-2-c1-l2a,visual,visual,10,composite,TCI true colour
+sentinel-2-c1-l2a,preview,preview,,composite,low-res browse
+sentinel-2-c1-l2a,thumbnail,thumbnail,,composite,
+sentinel-2-c1-l2a,granule_metadata,granule_metadata,,metadata,sun/view angles live here
+sentinel-2-c1-l2a,tileinfo_metadata,tileinfo_metadata,,metadata,
+sentinel-2-c1-l2a,product_metadata,product_metadata,,metadata,

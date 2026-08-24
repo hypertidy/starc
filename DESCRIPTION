@@ -1,0 +1,26 @@
+Package: starc
+Title: A Provider-Agnostic STAC Reference Cache
+Version: 0.2.0
+Authors@R:
+    person("Michael", "Sumner", , "mdsumner@gmail.com", role = c("aut", "cre", "cph"),
+           comment = c(ORCID = "0000-0002-2471-7511"))
+Description: Harvests SpatioTemporal Asset Catalog (STAC) discovery
+    results into an append-only Parquet reference store: queries,
+    acquisitions, products, and assets as separate levels, with all
+    asset references recorded verbatim and no fixed band vocabulary.
+    Markers and coverage are derived views, never stored state. Stores
+    references, never pixels.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+Depends: R (>= 4.2.0)
+Imports:
+    arrow,
+    digest,
+    dplyr,
+    jsonlite,
+    sds
+Suggests:
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Config/roxygen2/version: 8.0.0

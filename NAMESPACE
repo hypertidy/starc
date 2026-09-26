@@ -3,3 +3,4 @@
 export(harvest)
 export(harvest_mgrs)
 export(mgrs_month_url)
+export(tiles_to_mgrs)

@@ -1,0 +1,11 @@
+[package]
+name = "starc-core"
+version = "0.1.0"
+edition = "2021"
+description = "STAC search client for Sentinel-2 scene discovery — query builder + paginated asset extraction"
+license = "MIT"
+
+[dependencies]
+ureq = { version = "2", default-features = false, features = ["json", "native-tls"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"

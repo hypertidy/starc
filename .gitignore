@@ -1,3 +1,4 @@
 store
 .Rproj.user
-.Rhistory/target/
+.Rhistory
+/target/
